@@ -31,7 +31,16 @@ function renderGrid() {
         const monster = document.createElement("img");
         monster.classList.add("monster");
         monster.src =  `monsters/monster-${index}.png`;
-        slot.appendChild(monster);
+        
+	if (index === 29) {
+    		const link = document.createElement("a");
+   		 link.href = "https://x.com/kochamhw";
+		 link.target = "_blank";
+   		 link.appendChild(monster);
+ 		 slot.appendChild(link);
+	} else {
+   	 slot.appendChild(monster);
+	}
 
         // Skip rendering buttons for excluded indices
         if (excludedIndices.includes(index)) {
