@@ -84,3 +84,31 @@ button {
 #reset-btn:hover {
     background-color: #cc0000;
 }
+@media (max-width: 768px) {
+    #grid {
+        grid-template: repeat(5, 100px) / repeat(6, 100px);
+        max-width: 100%;
+    }
+
+    .monster {
+        width: 40%;
+        height: 40%;
+    }
+
+    .slot:nth-child(16) .monster,
+    .slot:nth-child(19) .monster,
+    .slot:nth-child(20) .monster,
+    .slot:nth-child(30) .monster {
+        height: 60%;
+    }
+
+    .big-crown-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .small-crown-btn {
+        width: 20px;
+        height: 20px;
+    }
+}
