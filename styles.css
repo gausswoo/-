@@ -65,17 +65,17 @@ button {
 }
 
 .big-crown-btn {
-    width: 60%; /* Percentage of the .buttons container */
+    width: 50%; /* Percentage of the .buttons container */
     height: 100%; /* Percentage of the .buttons container height */
     max-width: 40px; /* Cap the size to prevent it from getting too large on big screens */
     max-height: 40px;
 }
 
 .small-crown-btn {
-    width: 40%; /* Smaller percentage for the small crown */
+    width: 50%; /* Smaller percentage for the small crown */
     height: 100%; /* Smaller percentage for the small crown */
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 40px;
+    max-height: 40px;
 }
 
 #reset-btn {
