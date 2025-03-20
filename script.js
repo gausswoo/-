@@ -31,15 +31,19 @@ function renderGrid() {
         const monster = document.createElement("img");
         monster.classList.add("monster");
         monster.src =  `monsters/monster-${index}.png`;
-        
-	if (index === 29) {
-            monster.style.cursor = "pointer"; // Change cursor to indicate it's clickable
-            monster.addEventListener("click", () => {
-                window.open("https://x.com/kochamhw", "_blank");
-            });
+        // For index 29, wrap the monster image in an <a> tag
+        if (index === 29) {
+            const link = document.createElement("a");
+            link.href = "https://x.com/kochamhw";
+            link.target = "_blank";
+            link.appendChild(monster);
+            slot.appendChild(link);
+        } else {
+            slot.appendChild(monster);
         }
+	
 
-        slot.appendChild(monster);
+        
 
         // Skip rendering buttons for excluded indices
         if (excludedIndices.includes(index)) {
