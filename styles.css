@@ -34,7 +34,7 @@ h1 {
 
 .monster {
     width: 50%;
-    height: 50%;
+    height: 70%;
     object-fit: contain;
 }
 
@@ -43,14 +43,14 @@ h1 {
 .slot:nth-child(19) .monster,
 .slot:nth-child(20) .monster,
 .slot:nth-child(30) .monster {
-    height: 70%;
+    height: 100%;
 }
 
 .buttons {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    height: 50%;
+    height: 30%;
 }
 
 button {
@@ -65,15 +65,15 @@ button {
 }
 
 .big-crown-btn {
-    width: 40%; /* Percentage of the .buttons container */
-    height: 80%; /* Percentage of the .buttons container height */
+    width: 60%; /* Percentage of the .buttons container */
+    height: 100%; /* Percentage of the .buttons container height */
     max-width: 40px; /* Cap the size to prevent it from getting too large on big screens */
     max-height: 40px;
 }
 
 .small-crown-btn {
-    width: 30%; /* Smaller percentage for the small crown */
-    height: 60%; /* Smaller percentage for the small crown */
+    width: 40%; /* Smaller percentage for the small crown */
+    height: 100%; /* Smaller percentage for the small crown */
     max-width: 30px;
     max-height: 30px;
 }
@@ -111,35 +111,6 @@ button {
         padding: 3px;
     }
 
-    .monster {
-        width: 40%;
-        height: 40%;
-    }
-
-    .slot:nth-child(16) .monster,
-    .slot:nth-child(19) .monster,
-    .slot:nth-child(20) .monster,
-    .slot:nth-child(30) .monster {
-        height: 60%;
-    }
-
-    .buttons {
-        height: 60%;
-    }
-
-    .big-crown-btn {
-        width: 40%; /* Keep the percentage, but cap the max size */
-        height: 80%;
-        max-width: 30px; /* Smaller cap on mobile */
-        max-height: 30px;
-    }
-
-    .small-crown-btn {
-        width: 30%;
-        height: 60%;
-        max-width: 20px;
-        max-height: 20px;
-    }
 
     #reset-btn {
         padding: 8px 16px;
@@ -154,29 +125,4 @@ button {
         gap: 2px;
     }
 
-    .monster {
-        width: 35%;
-        height: 35%;
-    }
-
-    .slot:nth-child(16) .monster,
-    .slot:nth-child(19) .monster,
-    .slot:nth-child(20) .monster,
-    .slot:nth-child(30) .monster {
-        height: 55%;
-    }
-
-    .big-crown-btn {
-        width: 40%;
-        height: 80%;
-        max-width: 25px;
-        max-height: 25px;
-    }
-
-    .small-crown-btn {
-        width: 30%;
-        height: 60%;
-        max-width: 18px;
-        max-height: 18px;
-    }
 }
