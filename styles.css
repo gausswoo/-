@@ -13,12 +13,13 @@ h1 {
 
 #grid {
     display: grid;
-    grid-template: repeat(5, 120px) / repeat(6, 120px); /* Reduced default size */
-    gap: 5px; /* Reduced gap for smaller screens */
+    grid-template: repeat(5, 120px) / repeat(6, 120px);
+    gap: 5px;
     justify-content: center;
     margin: 10px auto;
-    max-width: 100%; /* Ensure it doesn’t exceed the viewport */
-    box-sizing: border-box; /* Include padding/borders in width */
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto; /* Allow horizontal scrolling on mobile */
 }
 
 .slot {
