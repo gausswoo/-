@@ -2,19 +2,23 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f0f0f0;
+    margin: 0; /* Remove default body margin to prevent overflow */
 }
 
 h1 {
     color: #333;
+    font-size: 1.5rem; /* Slightly smaller on mobile */
+    margin: 10px 0;
 }
 
 #grid {
     display: grid;
-    grid-template: repeat(5, 120px) / repeat(6, 150px); /* 5 rows × 6 columns */
-    gap: 5px;
+    grid-template: repeat(5, 120px) / repeat(6, 120px); /* Reduced default size */
+    gap: 5px; /* Reduced gap for smaller screens */
     justify-content: center;
-    margin: 20px auto;
-    max-width: 1000px;
+    margin: 10px auto;
+    max-width: 100%; /* Ensure it doesn’t exceed the viewport */
+    box-sizing: border-box; /* Include padding/borders in width */
 }
 
 .slot {
@@ -25,21 +29,21 @@ h1 {
     border-radius: 5px;
     padding: 5px;
     background-color: #fff;
+    box-sizing: border-box;
 }
 
 .monster {
     width: 50%;
-    height: 50%; /* Default height for most monster images */
+    height: 50%;
     object-fit: contain;
 }
 
 /* Increase height for monster images at indices 15, 18, 19, 29 */
-.slot:nth-child(16) .monster, /* Index 15 (nth-child is 1-based, so 15+1) */
-.slot:nth-child(19) .monster, /* Index 18 */
-.slot:nth-child(20) .monster, /* Index 19 */
-.slot:nth-child(30) .monster  /* Index 29 */
-{
-    height: 100%; /* Increased height for these slots */
+.slot:nth-child(16) .monster,
+.slot:nth-child(19) .monster,
+.slot:nth-child(20) .monster,
+.slot:nth-child(30) .monster {
+    height: 70%;
 }
 
 .buttons {
@@ -66,8 +70,8 @@ button {
 }
 
 .small-crown-btn {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 
 #reset-btn {
@@ -78,20 +82,33 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
+    margin: 10px auto;
+    display: block; /* Center the button */
 }
 
 #reset-btn:hover {
     background-color: #cc0000;
 }
+
+/* Media query for mobile devices (screens smaller than 768px) */
 @media (max-width: 768px) {
+    h1 {
+        font-size: 1.2rem; /* Smaller title on mobile */
+    }
+
     #grid {
-        grid-template: repeat(5, 100px) / repeat(6, 100px);
-        max-width: 100%;
+        grid-template: repeat(5, 15vw) / repeat(6, 15vw); /* Use viewport units to scale */
+        gap: 3px; /* Smaller gap on mobile */
+        margin: 5px auto;
+        padding: 0 5px; /* Add small padding to prevent edge cutoff */
+    }
+
+    .slot {
+        padding: 3px; /* Reduce padding on mobile */
     }
 
     .monster {
-        width: 40%;
+        width: 40%; /* Slightly smaller monster images */
         height: 40%;
     }
 
@@ -99,16 +116,55 @@ button {
     .slot:nth-child(19) .monster,
     .slot:nth-child(20) .monster,
     .slot:nth-child(30) .monster {
-        height: 60%;
+        height: 60%; /* Adjusted for mobile */
+    }
+
+    .buttons {
+        height: 60%; /* Give more space for buttons on mobile */
     }
 
     .big-crown-btn {
-        width: 30px;
+        width: 30px; /* Smaller buttons on mobile */
         height: 30px;
     }
 
     .small-crown-btn {
         width: 20px;
         height: 20px;
+    }
+
+    #reset-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Extra small screens (e.g., very narrow phones, < 400px) */
+@media (max-width: 400px) {
+    #grid {
+        grid-template: repeat(5, 13vw) / repeat(6, 13vw); /* Further scale down */
+        gap: 2px;
+    }
+
+    .monster {
+        width: 35%;
+        height: 35%;
+    }
+
+    .slot:nth-child(16) .monster,
+    .slot:nth-child(19) .monster,
+    .slot:nth-child(20) .monster,
+    .slot:nth-child(30) .monster {
+        height: 55%;
+    }
+
+    .big-crown-btn {
+        width: 25px;
+        height: 25px;
+    }
+
+    .small-crown-btn {
+        width: 18px;
+        height: 18px;
     }
 }
