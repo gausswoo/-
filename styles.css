@@ -2,12 +2,12 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f0f0f0;
-    margin: 0; /* Remove default body margin to prevent overflow */
+    margin: 0;
 }
 
 h1 {
     color: #333;
-    font-size: 1.5rem; /* Slightly smaller on mobile */
+    font-size: 1.5rem;
     margin: 10px 0;
 }
 
@@ -19,7 +19,6 @@ h1 {
     margin: 10px auto;
     max-width: 100%;
     box-sizing: border-box;
-    overflow-x: auto; /* Allow horizontal scrolling on mobile */
 }
 
 .slot {
@@ -66,13 +65,17 @@ button {
 }
 
 .big-crown-btn {
-    width: 30px;
-    height: 30px;
+    width: 40%; /* Percentage of the .buttons container */
+    height: 80%; /* Percentage of the .buttons container height */
+    max-width: 40px; /* Cap the size to prevent it from getting too large on big screens */
+    max-height: 40px;
 }
 
 .small-crown-btn {
-    width: 30px;
-    height: 30px;
+    width: 30%; /* Smaller percentage for the small crown */
+    height: 60%; /* Smaller percentage for the small crown */
+    max-width: 30px;
+    max-height: 30px;
 }
 
 #reset-btn {
@@ -84,7 +87,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin: 10px auto;
-    display: block; /* Center the button */
+    display: block;
 }
 
 #reset-btn:hover {
@@ -94,22 +97,22 @@ button {
 /* Media query for mobile devices (screens smaller than 768px) */
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.2rem; /* Smaller title on mobile */
+        font-size: 1.2rem;
     }
 
     #grid {
-        grid-template: repeat(5, 15vw) / repeat(6, 15vw); /* Use viewport units to scale */
-        gap: 3px; /* Smaller gap on mobile */
+        grid-template: repeat(5, 15vw) / repeat(6, 15vw);
+        gap: 3px;
         margin: 5px auto;
-        padding: 0 5px; /* Add small padding to prevent edge cutoff */
+        padding: 0 5px;
     }
 
     .slot {
-        padding: 3px; /* Reduce padding on mobile */
+        padding: 3px;
     }
 
     .monster {
-        width: 40%; /* Slightly smaller monster images */
+        width: 40%;
         height: 40%;
     }
 
@@ -117,21 +120,25 @@ button {
     .slot:nth-child(19) .monster,
     .slot:nth-child(20) .monster,
     .slot:nth-child(30) .monster {
-        height: 60%; /* Adjusted for mobile */
+        height: 60%;
     }
 
     .buttons {
-        height: 60%; /* Give more space for buttons on mobile */
+        height: 60%;
     }
 
     .big-crown-btn {
-        width: 13px; /* Smaller buttons on mobile */
-        height: 13px;
+        width: 40%; /* Keep the percentage, but cap the max size */
+        height: 80%;
+        max-width: 30px; /* Smaller cap on mobile */
+        max-height: 30px;
     }
 
     .small-crown-btn {
-        width: 13px;
-        height: 13px;
+        width: 30%;
+        height: 60%;
+        max-width: 20px;
+        max-height: 20px;
     }
 
     #reset-btn {
@@ -143,7 +150,7 @@ button {
 /* Extra small screens (e.g., very narrow phones, < 400px) */
 @media (max-width: 400px) {
     #grid {
-        grid-template: repeat(5, 13vw) / repeat(6, 13vw); /* Further scale down */
+        grid-template: repeat(5, 13vw) / repeat(6, 13vw);
         gap: 2px;
     }
 
@@ -160,12 +167,16 @@ button {
     }
 
     .big-crown-btn {
-        width: 10px;
-        height: 10px;
+        width: 40%;
+        height: 80%;
+        max-width: 25px;
+        max-height: 25px;
     }
 
     .small-crown-btn {
-        width: 10px;
-        height: 10px;
+        width: 30%;
+        height: 60%;
+        max-width: 18px;
+        max-height: 18px;
     }
 }
