@@ -33,14 +33,13 @@ function renderGrid() {
         monster.src =  `monsters/monster-${index}.png`;
         
 	if (index === 29) {
-    		const link = document.createElement("a");
-   		 link.href = "https://x.com/kochamhw";
-		 link.target = "_blank";
-   		 link.appendChild(monster);
- 		 slot.appendChild(link);
-	} else {
-   	 slot.appendChild(monster);
-	}
+            monster.style.cursor = "pointer"; // Change cursor to indicate it's clickable
+            monster.addEventListener("click", () => {
+                window.open("https://x.com/kochamhw", "_blank");
+            });
+        }
+
+        slot.appendChild(monster);
 
         // Skip rendering buttons for excluded indices
         if (excludedIndices.includes(index)) {
