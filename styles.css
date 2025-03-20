@@ -45,6 +45,20 @@ h1 {
 .slot:nth-child(30) .monster {
     height: 100%;
 }
+/* Style the <a> tag for index 29 to ensure consistent sizing */
+.slot:nth-child(30) a {
+    display: block; /* Ensure the <a> tag doesn't interfere with layout */
+    width: 50%; /* Match the width of the .monster class */
+    height: 70%; /* Match the height of the larger monster images */
+    line-height: 0; /* Remove any extra space */
+    text-decoration: none; /* Remove the default underline */
+}
+
+/* Ensure the image inside the <a> tag takes up the full space */
+.slot:nth-child(30) a .monster {
+    width: 100%;
+    height: 100%;
+}
 
 .buttons {
     display: flex;
